@@ -1,297 +1,152 @@
+/* Branding Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+
 @theme inline {
+  --font-sans: 'Roboto', sans-serif;
+  --font-mono: 'Playfair Display', serif;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
 }
 
-/* Modern glassmorphic theme with our color scheme */
+/* Updated Branding Color Palette */
 :root {
-  /* Increased border radius for a sleeker feel */
   --radius: 1rem;
   
-  /* Background with subtle color */
-  --background: oklch(0.98 0.01 270);
-  --foreground: oklch(0.2 0.02 280);
+  /* Background Colors */
+  --background: #F4F4F4;
+  --foreground: #1E1E1E;
   
-  /* Card styling with glass effect */
-  --card: oklch(0.97 0.01 270 / 0.7);
-  --card-foreground: oklch(0.2 0.02 280);
+  /* Primary Brand Colors */
+  --primary: #AEDFF7; /* Pastel Blue */
+  --primary-foreground: #1A2B44;
   
-  /* Popover styling */
-  --popover: oklch(0.97 0.01 270 / 0.8);
-  --popover-foreground: oklch(0.2 0.02 280);
+  --secondary: #E5D0FF; /* Soft Lavender */
+  --secondary-foreground: #35255F;
   
-  /* Purple primary color from #7068F4 */
-  --primary: oklch(0.65 0.2 280);
-  --primary-foreground: oklch(0.99 0.01 0);
+  --accent: #FFA07A; /* Warm Peach */
+  --accent-foreground: #522E26;
   
-  /* Pink secondary color from #FF64B4 */
-  --secondary: oklch(0.72 0.22 350);
-  --secondary-foreground: oklch(0.99 0.01 0);
+  --muted: #A0D9D9; /* Quiet Teal */
+  --muted-foreground: #174C4C;
   
-  /* Muted tones for subtle elements */
-  --muted: oklch(0.95 0.03 270);
-  --muted-foreground: oklch(0.5 0.05 280);
-  
-  /* Orange accent color from #ffac4c */
-  --accent: oklch(0.8 0.15 60);
-  --accent-foreground: oklch(0.15 0.02 0);
-  
-  /* Red tone for destructive actions */
-  --destructive: oklch(0.65 0.25 25);
-  --destructive-foreground: oklch(0.99 0.01 0);
-  
-  /* Soft borders and inputs */
-  --border: oklch(0.9 0.02 270 / 0.2);
-  --input: oklch(0.9 0.02 270 / 0.2);
-  --ring: oklch(0.65 0.2 280 / 0.5);
-  
-  /* Chart colors */
-  --chart-1: oklch(0.65 0.2 280); /* Purple - #7068F4 */
-  --chart-2: oklch(0.72 0.22 350); /* Pink - #FF64B4 */
-  --chart-3: oklch(0.8 0.15 60);  /* Orange - #ffac4c */
-  --chart-4: oklch(0.7 0.18 320); /* Magenta */
-  --chart-5: oklch(0.6 0.15 240); /* Blue-purple */
-  
-  /* Sidebar styling */
-  --sidebar: oklch(0.97 0.01 270 / 0.7);
-  --sidebar-foreground: oklch(0.2 0.02 280);
-  --sidebar-primary: oklch(0.65 0.2 280);
-  --sidebar-primary-foreground: oklch(0.99 0.01 0);
-  --sidebar-accent: oklch(0.8 0.15 60);
-  --sidebar-accent-foreground: oklch(0.15 0.02 0);
-  --sidebar-border: oklch(0.9 0.02 270 / 0.2);
-  --sidebar-ring: oklch(0.65 0.2 280 / 0.5);
+  --border: rgba(160, 217, 217, 0.4);
 }
 
-/* Dark mode with futuristic tech feel */
+/* Dark Mode Branding Adjustments */
 .dark {
-  /* Deep backgrounds with subtle transparency */
-  --background: oklch(0.15 0.03 280);
-  --foreground: oklch(0.96 0.02 0);
+  --background: #1E1E2E;
+  --foreground: #F4F4F4;
   
-  /* Card styling with glassy effect */
-  --card: oklch(0.2 0.04 280 / 0.6);
-  --card-foreground: oklch(0.96 0.02 0);
+  --primary: #93CBEA;
+  --secondary: #C9A6FF;
+  --accent: #FF8F5B;
+  --muted: #89CBCB;
   
-  /* Popover styling */
-  --popover: oklch(0.2 0.04 280 / 0.7);
-  --popover-foreground: oklch(0.96 0.02 0);
-  
-  /* Brighter purple primary for dark mode - #7068F4 */
-  --primary: oklch(0.7 0.2 280);
-  --primary-foreground: oklch(0.1 0.02 0);
-  
-  /* Brighter pink for visibility - #FF64B4 */
-  --secondary: oklch(0.72 0.22 350);
-  --secondary-foreground: oklch(0.1 0.02 0);
-  
-  /* Dark muted colors */
-  --muted: oklch(0.25 0.04 280);
-  --muted-foreground: oklch(0.7 0.05 280);
-  
-  /* Brighter orange accent for dark mode visibility - #ffac4c */
-  --accent: oklch(0.8 0.15 60);
-  --accent-foreground: oklch(0.1 0.02 0);
-  
-  /* Brighter destructive for visibility */
-  --destructive: oklch(0.75 0.28 25);
-  --destructive-foreground: oklch(0.1 0.02 0);
-  
-  /* Subtle glowing borders */
-  --border: oklch(0.65 0.15 280 / 0.15);
-  --input: oklch(0.65 0.15 280 / 0.2);
-  --ring: oklch(0.7 0.2 280 / 0.5);
-  
-  /* Dark mode chart colors - brighter for contrast */
-  --chart-1: oklch(0.7 0.22 280); /* Brighter purple */
-  --chart-2: oklch(0.75 0.24 350); /* Brighter pink */
-  --chart-3: oklch(0.83 0.17 60);  /* Brighter orange */
-  --chart-4: oklch(0.75 0.2 320); /* Brighter magenta */
-  --chart-5: oklch(0.65 0.18 240); /* Brighter blue-purple */
-  
-  /* Dark sidebar with glass effect */
-  --sidebar: oklch(0.2 0.04 280 / 0.6);
-  --sidebar-foreground: oklch(0.96 0.02 0);
-  --sidebar-primary: oklch(0.7 0.2 280);
-  --sidebar-primary-foreground: oklch(0.1 0.02 0);
-  --sidebar-accent: oklch(0.8 0.15 60);
-  --sidebar-accent-foreground: oklch(0.1 0.02 0);
-  --sidebar-border: oklch(0.65 0.15 280 / 0.15);
-  --sidebar-ring: oklch(0.7 0.2 280 / 0.5);
+  --border: rgba(137, 203, 203, 0.3);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground bg-gradient-to-br from-primary/5 via-background to-secondary/5;
+    @apply border-border outline-none focus:outline focus:ring-2 focus:ring-primary;
   }
   
-  /* Modern typography */
+  body {
+    @apply bg-background text-foreground font-sans bg-gradient-to-br from-primary/10 via-background to-secondary/10;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium;
+    @apply font-mono font-semibold text-primary;
   }
   
   h1 {
-    @apply text-4xl;
+    @apply text-5xl;
   }
   
   h2 {
-    @apply text-3xl;
+    @apply text-4xl;
   }
   
   h3 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
 }
 
-/* Glassmorphic and futuristic design utility classes */
 @layer components {
+  /* 🌙 Intention Glow Effect */
+  .moon-glow {
+    @apply w-12 h-12 rounded-full bg-secondary shadow-md transition-transform ease-in-out duration-500;
+    animation: moonPulse 2s infinite alternate;
+  }
+
+  /* 🌀 Multi-Select Enhancements */
+  .multi-select-item {
+    @apply px-4 py-2 rounded-lg border shadow-lg transition-all duration-300 ease-in-out cursor-pointer;
+  }
+
+  .multi-select-item.selected {
+    @apply bg-primary text-white scale-105 shadow-lg;
+    animation: pulseSelected 1.5s infinite alternate;
+  }
+
+  /* 💡 Interactive Buttons */
+  .interactive-button {
+    @apply bg-primary hover:bg-secondary text-primary rounded-xl p-3 backdrop-blur-sm hover:shadow-lg transition-all shadow-md hover:scale-105 active:scale-95;
+  }
+
+  /* 🚀 Smooth Page Transitions */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* 🌙 Moon Glow Animation */
+  @keyframes moonPulse {
+    from { opacity: 0.7; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.1); }
+  }
+
+  /* 🔄 Pulse Effect for Multi-Select */
+  @keyframes pulseSelected {
+    from { opacity: 0.8; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.05); }
+  }
+
+  /* 🎨 Gradient Backgrounds */
+  .gradient-blue-lavender {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary;
+  }
+
+  .gradient-lavender-peach {
+    @apply bg-gradient-to-r from-secondary to-accent text-secondary;
+  }
+  
+  .gradient-blue-peach {
+    @apply bg-gradient-to-r from-primary to-accent text-primary;
+  }
+
+  /* 🌟 Glassmorphic UI Enhancements */
   .glass-card {
     @apply rounded-xl bg-white/20 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow;
   }
-  
-  .glass-input {
-    @apply bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 dark:border-white/10;
-  }
-  
+
   .glass-button {
-    @apply backdrop-blur-sm hover:shadow-lg transition-all shadow-md;
+    @apply rounded-lg backdrop-blur-sm hover:shadow-lg transition-all shadow-md hover:scale-105;
   }
-  
-  .gradient-purple-pink {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground;
-  }
-  
-  .gradient-pink-orange {
-    @apply bg-gradient-to-r from-secondary to-accent text-secondary-foreground;
-  }
-  
-  .gradient-purple-orange {
-    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground;
-  }
-  
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
-  }
-  
-  .gradient-border {
-    @apply border border-transparent bg-gradient-to-r from-primary/30 via-secondary/30 to-accent/30 bg-origin-border;
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) padding-box, 
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-  
-  .glass-bg {
-    @apply bg-gradient-to-br from-primary/5 via-background to-secondary/5;
-  }
-  
-  .glass-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8;
-  }
-  
-  .futuristic-border {
-    @apply border border-white/20 dark:border-white/10 rounded-xl overflow-hidden;
-  }
-  
-  .glow {
-    @apply relative;
-  }
-  
-  .glow::after {
-    @apply content-[''] absolute -inset-0.5 rounded-[inherit] z-[-1] opacity-75 pointer-events-none blur-md;
-    background: linear-gradient(35deg, #7068F4, transparent, #FF64B4, transparent, #ffac4c);
-    animation: shimmer 10s ease-in-out infinite;
-    background-size: 200% 200%;
-  }
-  
-  .glow-purple::after {
-    background: linear-gradient(35deg, #7068F4, rgba(112, 104, 244, 0.5), transparent);
-  }
-  
-  .glow-pink::after {
-    background: linear-gradient(35deg, #FF64B4, rgba(255, 100, 180, 0.5), transparent);
-  }
-  
-  .glow-orange::after {
-    background: linear-gradient(35deg, #ffac4c, rgba(255, 172, 76, 0.5), transparent);
-  }
-  
-  .interactive-card {
-    @apply transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg;
-  }
-  
-  .shimmer {
-    @apply relative overflow-hidden;
-  }
-  
-  .shimmer::after {
-    @apply content-[''] absolute inset-0 z-10;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(255, 255, 255, 0.1), 
-      transparent
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-  }
-}
 
-/* Animation keyframes */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+  .glass-input {
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-lg px-4 py-2;
+  }
 }
