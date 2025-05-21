@@ -1,152 +1,25 @@
 /* Branding Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
 
-
-@theme inline {
-  --font-sans: 'Roboto', sans-serif;
-  --font-mono: 'Playfair Display', serif;
-  
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
-}
-
-/* Updated Branding Color Palette */
 :root {
-  --radius: 1rem;
-  
-  /* Background Colors */
-  --background: #F4F4F4;
-  --foreground: #1E1E1E;
-  
-  /* Primary Brand Colors */
-  --primary: #AEDFF7; /* Pastel Blue */
+  --background: #FBFBFF;
+  --foreground: #222031;
+  --primary: #AEDFF7;
   --primary-foreground: #1A2B44;
-  
-  --secondary: #E5D0FF; /* Soft Lavender */
+  --secondary: #E5D0FF;
   --secondary-foreground: #35255F;
-  
-  --accent: #FFA07A; /* Warm Peach */
+  --accent: #FFA07A;
   --accent-foreground: #522E26;
-  
-  --muted: #A0D9D9; /* Quiet Teal */
-  --muted-foreground: #174C4C;
-  
-  --border: rgba(160, 217, 217, 0.4);
 }
 
-/* Dark Mode Branding Adjustments */
-.dark {
-  --background: #1E1E2E;
-  --foreground: #F4F4F4;
-  
-  --primary: #93CBEA;
-  --secondary: #C9A6FF;
-  --accent: #FF8F5B;
-  --muted: #89CBCB;
-  
-  --border: rgba(137, 203, 203, 0.3);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-none focus:outline focus:ring-2 focus:ring-primary;
-  }
-  
-  body {
-    @apply bg-background text-foreground font-sans bg-gradient-to-br from-primary/10 via-background to-secondary/10;
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-mono font-semibold text-primary;
-  }
-  
-  h1 {
-    @apply text-5xl;
-  }
-  
-  h2 {
-    @apply text-4xl;
-  }
-  
-  h3 {
-    @apply text-3xl;
-  }
-}
-
-@layer components {
-  /* 🌙 Intention Glow Effect */
-  .moon-glow {
-    @apply w-12 h-12 rounded-full bg-secondary shadow-md transition-transform ease-in-out duration-500;
-    animation: moonPulse 2s infinite alternate;
-  }
-
-  /* 🌀 Multi-Select Enhancements */
-  .multi-select-item {
-    @apply px-4 py-2 rounded-lg border shadow-lg transition-all duration-300 ease-in-out cursor-pointer;
-  }
-
-  .multi-select-item.selected {
-    @apply bg-primary text-white scale-105 shadow-lg;
-    animation: pulseSelected 1.5s infinite alternate;
-  }
-
-  /* 💡 Interactive Buttons */
-  .interactive-button {
-    @apply bg-primary hover:bg-secondary text-primary rounded-xl p-3 backdrop-blur-sm hover:shadow-lg transition-all shadow-md hover:scale-105 active:scale-95;
-  }
-
-  /* 🚀 Smooth Page Transitions */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  /* 🌙 Moon Glow Animation */
-  @keyframes moonPulse {
-    from { opacity: 0.7; transform: scale(1); }
-    to { opacity: 1; transform: scale(1.1); }
-  }
-
-  /* 🔄 Pulse Effect for Multi-Select */
-  @keyframes pulseSelected {
-    from { opacity: 0.8; transform: scale(1); }
-    to { opacity: 1; transform: scale(1.05); }
-  }
-
-  /* 🎨 Gradient Backgrounds */
-  .gradient-blue-lavender {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary;
-  }
-
-  .gradient-lavender-peach {
-    @apply bg-gradient-to-r from-secondary to-accent text-secondary;
-  }
-  
-  .gradient-blue-peach {
-    @apply bg-gradient-to-r from-primary to-accent text-primary;
-  }
-
-  /* 🌟 Glassmorphic UI Enhancements */
-  .glass-card {
-    @apply rounded-xl bg-white/20 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow;
-  }
-
-  .glass-button {
-    @apply rounded-lg backdrop-blur-sm hover:shadow-lg transition-all shadow-md hover:scale-105;
-  }
-
-  .glass-input {
-    @apply bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-lg px-4 py-2;
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
 }
